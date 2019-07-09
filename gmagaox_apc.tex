@@ -235,16 +235,24 @@ partnerships.}
 
 TECHNICAL DESCRIPTION OF GMT (including site, consortium, etc)
 
-In Figure \ref{fig:ap} we present our notional concept of how the GMagAO-X instrument could be mounted in a gravity invariant environment at the so-called Auxilliary Port (AP). The AP is essentially equivalent to a Nasmyth port on the GMT, being on the elevation axis and so is the only place on GMT that is both gravity invariant and can also be used for imaging.  Figure 4 shows how GMagAO-X will appear when mounted at the elevation axis on the GMT. As the telescope moves in elevation the instrument stays fixed w.r.t. gravity. A floating optical table (with servo control on the position of the table-- utilizing the TMC PEPSII stability system) can be employed.  This will prevent vibrations above 10Hz from coupling into the instrument (lower frequency vibrations will be removed by the AO system). 
-This notional concept has established the feasibility of mounting GMagAO-X on the GMT without conflicts with already planned instruments.  The next step is to perform a conceptual design study to ensure that such an instrument will achieve the demanding science based requirement we motivate above, and addresses the risks unique to this instrument. 
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=6in]{figures/ap.png}
 \caption{ GMagAO-X concept shown within the Aux. Port volume and mounted on the GMT elevation axis. \label{fig:ap}}
 \end{figure}
 
-Achieving the $\sim$13.5 cm projected sampling of the primary mirror requires $\sim$3000 actuators per 8.4 m segment, a total of 21,000 actuators on the GMT segments.   Achieving this with a monolothic DM would require a 188x188 format device, or $\sim$35,000 actuators. The largest currently in development DM is 128x128, and no such device has yet been delivered.  While some discussion are underway for larger devices, there are no no DMs for the foreseeable future which meet our requirements. To overcome this hurdle, we have proposed a novel optical design that combines seven 3000 actuator \textit{currently available} DMs from Boston Micromachines Corp. (BMC) to work in parallel to as a combined 21,000 actuator DM. We note this could also be applied the TMT pupil with some modifications. 
+In Figure \ref{fig:ap} we present our notional concept of how the GMagAO-X instrument could be mounted in a gravity invariant environment at the so-called Auxilliary Port (AP). The AP is essentially equivalent to a Nasmyth port on the GMT, being on the elevation axis and so is the only place on GMT that is both gravity invariant and can also be used for imaging.  Figure 4 shows how GMagAO-X will appear when mounted at the elevation axis on the GMT. As the telescope moves in elevation the instrument stays fixed w.r.t. gravity. A floating optical table (with servo control on the position of the table-- utilizing the TMC PEPSII stability system) can be employed.  This will prevent vibrations above 10Hz from coupling into the instrument (lower frequency vibrations will be removed by the AO system). 
+This notional concept has established the feasibility of mounting GMagAO-X on the GMT without conflicts with already planned instruments.  The next step is to perform a conceptual design study to ensure that such an instrument will achieve the demanding science based requirement we motivate above, and addresses the risks unique to this instrument. 
+
+\begin{figure} [h!]
+\centering
+\includegraphics[width=6in]{figures/pardm.png}
+\caption{ Concept for a 7-segment 21,000 MEMS deformable mirror using a six-sided reflective prism.  In the cartoon at left all optical paths are the same length.  Pupils (conjugate to primary mirror segments) are the green planes. The center segment is passed through the central hole. Mechanical design renderings with different views show how such a parallel DM could be implemented.  \label{fig:pardm}}
+\end{figure}
+
+Achieving the $\sim$13.5 cm projected sampling of the primary mirror requires $\sim$3000 actuators per 8.4 m segment, a total of 21,000 actuators on the GMT segments.   Achieving this with a monolothic DM would require a 188x188 format device, or $\sim$35,000 actuators. The largest currently in development DM is 128x128, and no such device has yet been delivered.  While some discussion are underway for larger devices, there are no no DMs for the foreseeable future which meet our requirements. To overcome this hurdle, we have proposed a novel optical design that combines seven 3000 actuator \textit{currently available} DMs from Boston Micromachines Corp. (BMC) to work in parallel to as a combined 21,000 actuator DM. We note this could also be applied the TMT pupil with some modifications.  This concept is illustrated in Figure \ref{fig:pardm}.
+
+
 
 \section{Technology Drivers} 
 \textit{If the pursuit requires new technologies, the paper should identify and

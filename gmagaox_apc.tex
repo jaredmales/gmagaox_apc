@@ -130,15 +130,15 @@ Email: jrmales@email.arizona.edu \linebreak
 Laird M. Close (University of Arizona) \\
 Olivier Guyon (University of Arizona, Subaru Telescope)
 
-\textbf{Abstract:} We describe plans for an "extreme" adaptive optics (ExAO) system for the Giant Magellan Telescope (GMT).  This instrument concept, currently called "GMagAO-X", is based on using existing deformable mirror (DM) and wavefront sensor (WFS) detector technology to implement a 21,000 actuator, 2000 Hz system.  Combined with state of the art coronagraphy, GMagAO-X will enable detection and characterization of exoplanets at extreme contrast ratios in groundbreaking variety.  This will include young giant planets (both from thermal emission and in the H-alpha acretion signature), older giant planets in reflected light, and temperate terrestrial planets orbiting nearby late-type stars also in reflected light.  GMagAO-X will also enable studies of circumstellar disks at unprecedented angular resolution in the visible and near-IR.  Since it is based on existing proven technology, GMagAO-X can be available at, or shortly-after, first light of the GMT, allowing the observatory to deliver groundbreaking exoplanet science almost immediately.  
+\textbf{Abstract:} We describe plans for an ``extreme'' adaptive optics (ExAO) system for the Giant Magellan Telescope (GMT).  This instrument concept, currently called ``GMagAO-X'', is based on using existing deformable mirror (DM) and wavefront sensor (WFS) detector technology to implement a 21,000 actuator, 2000 Hz system.  Combined with state of the art coronagraphy, GMagAO-X will enable detection and characterization of exoplanets at extreme contrast ratios in groundbreaking variety.  This will include young giant planets (both from thermal emission and in the H-alpha acretion signature), older giant planets in reflected light, and temperate terrestrial planets orbiting nearby late-type stars also in reflected light.  GMagAO-X will also enable studies of circumstellar disks at unprecedented angular resolution in the visible and near-IR.  Since it is based on existing proven technology, GMagAO-X can be available at, or shortly-after, first light of the GMT, allowing the observatory to deliver groundbreaking exoplanet science almost immediately.  
 \clearpage
 \setcounter{page}{1}
 
 \section{Introduction: A path to high-contrast AO imaging at/near GMT first light} \label{sec:intro}
 
-\begin{wrapfigure}{r}{3.2in}
+\begin{wrapfigure}[15]{r}{3.3in}
 \centering
-\vspace{-0.2in}
+\vspace{-0.4in}
 \includegraphics[width=3.1in]{figures/fig1.png}
 \vspace{-0.2in}
 \caption{ Strehl Ratio vs. guidestar magnitude for 13.5 cm actuator pitch and a 2 kHz ExAO system.  These curves are from MagAO-X simulations \citep{2018SPIE10703E..09M}.  By maintaining the same actuator pitch, these curves can be extrapolated to the GMT ExAO system we propose here. \label{fig:strehl} }
@@ -147,15 +147,15 @@ Olivier Guyon (University of Arizona, Subaru Telescope)
 The MagAO-X extreme adaptive optics (ExAO) system for the Magellan Clay telescope is currently under construction \citep{2018SPIE10703E..09M, 2018SPIE10703E..4YC}.  It consists of a 2040 actuator deformable mirror (DM), 3.6 kHz pyramid wavefront sensor (PyWFS), a suite of coronagraphs, and employs various post-coronagraph wavefront sensing and control techniques to optimize contrast.  MagAO-X is optimized for work in the visible, red-optical, and near-IR.  Destined for the same site as the GMT, it is an ideal testbed and demonstration system for a potential ExAO system for the GMT.
 The concept we describe here, which we call “GMagAO-X” is based on scaling the 2000 actuator DM of MagAO-X from the 6.5 m Clay to the 25.4 m GMT, maintaining the same actuator spacing when projected onto the primary mirror.  This scaling works out to one 3000 actuator DM per 8.4 m diameter segment.  We discuss the opto-mechanical implementation of this below.  Here we note that by preserving projected actuator pitch and AO system speed, such a system will achieve the same Strehl ratio on the GMT as is projected for MagAO-X.  We show this performance in Figure \ref{fig:strehl}.
 
-\begin{wrapfigure}[12]{r}{3.2in}
+\begin{wrapfigure}[14]{r}{3.2in}
 \centering
 \vspace{-0.4in}
 \includegraphics[width=3.1in]{figures/fig2.pdf}
 \vspace{-0.2in}
-\caption{ Post-coronagraph raw contrast for GMagAO-X using the semi-analytic model of Males and Guyon (2018), for an I=8 mag star such as Prox. Cen.  Throughout this paper we assume instrument performance 10 times worse than this prediction. \label{fig:contrast} }
+\caption{ Post-coronagraph raw contrast for GMagAO-X using the semi-analytic model of Males and Guyon (2018), for an I=8 mag star such as Prox. Cen.   \label{fig:contrast} }
 \end{wrapfigure}
 
-The larger diameter of the GMT results in a significant improvement in post-coronagraph contrast.  \citet{2018JATIS...4a9001M} presented a semi-analytic framework for modeling systems such as the one we propose here, including the effects of AO control dynamics.  The result for an I=8th mag star, such as Proxima Centauri, is shown in Figure 2.
+The larger diameter of the GMT results in a significant improvement in post-coronagraph contrast. Due to the finer sampling of atmospheric turbulence power, this improvement goes as $\propto D^2$, hence the GMT will deliver a 15x improvement over the 6.5 m Clay telescope in terms of raw contrast.  The resulting photon-noise limited exposure time improvement goes as $\propto D^4$, and improvement in by a factor of 233.  \citet{2018JATIS...4a9001M} presented a semi-analytic framework for modeling systems such as the one we propose here, including the effects of AO control dynamics.  The result for an I=8th mag star, such as Proxima Centauri, is shown in Figure 2.
 
 \section{Key Science Goals and Objectives}
 \textit{The papers should summarize the most important

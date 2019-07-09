@@ -1,124 +1,82 @@
-%%
-%% Beginning of file 'sample62.tex'
-%%
-%% Modified 2018 January
-%%
-%% This is a sample manuscript marked up using the
-%% AASTeX v6.2 LaTeX 2e macros.
-%%
-%% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
-%% (Copyright 2000-2015).  See the classfile for details.
+\documentclass[11pt,preprint]{aastex}
+\usepackage{amsmath}
+\usepackage[]{graphicx, epstopdf}
+\usepackage{indentfirst}
+\usepackage{lscape}
+\usepackage{afterpage}
+\usepackage{rotating}
+\let\captionbox\undefined
+%\usepackage{caption}
 
-%% AASTeX requires revtex4-1.cls (http://publish.aps.org/revtex4/) and
-%% other external packages (latexsym, graphicx, amssymb, longtable, and epsf).
-%% All of these external packages should already be present in the modern TeX 
-%% distributions.  If not they can also be obtained at www.ctan.org.
+%\captionsetup{width=6.3in,font=footnotesize}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{textcomp}
+\newcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
 
-%% The first piece of markup in an AASTeX v6.x document is the \documentclass
-%% command. LaTeX will ignore any data that comes before this command. The 
-%% documentclass can take an optional argument to modify the output style.
-%% The command below calls the preprint style  which will produce a tightly 
-%% typeset, one-column, single-spaced document.  It is the default and thus
-%% does not need to be explicitly stated.
-%%
-%%
-%% using aastex version 6.2
-\documentclass{aastex62}
 
-%% The default is a single spaced, 10 point font, single spaced article.
-%% There are 5 other style options available via an optional argument. They
-%% can be envoked like this:
-%%
-%% \documentclass[argument]{aastex62}
-%% 
-%% where the layout options are:
-%%
-%%  twocolumn   : two text columns, 10 point font, single spaced article.
-%%                This is the most compact and represent the final published
-%%                derived PDF copy of the accepted manuscript from the publisher
-%%  manuscript  : one text column, 12 point font, double spaced article.
-%%  preprint    : one text column, 12 point font, single spaced article.  
-%%  preprint2   : two text columns, 12 point font, single spaced article.
-%%  modern      : a stylish, single text column, 12 point font, article with
-%% 		  wider left and right margins. This uses the Daniel
-%% 		  Foreman-Mackey and David Hogg design.
-%%  RNAAS       : Preferred style for Research Notes which are by design 
-%%                lacking an abstract and brief. DO NOT use \begin{abstract}
-%%                and \end{abstract} with this style.
-%%
-%% Note that you can submit to the AAS Journals in any of these 6 styles.
-%%
-%% There are other optional arguments one can envoke to allow other stylistic
-%% actions. The available options are:
-%%
-%%  astrosymb    : Loads Astrosymb font and define \astrocommands. 
-%%  tighten      : Makes baselineskip slightly smaller, only works with 
-%%                 the twocolumn substyle.
-%%  times        : uses times font instead of the default
-%%  linenumbers  : turn on lineno package.
-%%  trackchanges : required to see the revision mark up and print its output
-%%  longauthor   : Do not use the more compressed footnote style (default) for 
-%%                 the author/collaboration/affiliations. Instead print all
-%%                 affiliation information after each name. Creates a much
-%%                 long author list but may be desirable for short author papers
-%%
-%% these can be used in any combination, e.g.
-%%
-%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex62}
-%%
-%% AASTeX v6.* now includes \hyperref support. While we have built in specific
-%% defaults into the classfile you can manually override them with the
-%% \hypersetup command. For example,
-%%
-%%\hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
-%%
-%% will change the color of the internal links to red, the links to the
-%% bibliography to green, the file links to cyan, and the external links to
-%% magenta. Additional information on \hyperref options can be found here:
-%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
-%%
-%% If you want to create your own macros, you can do so
-%% using \newcommand. Your macros should appear before
-%% the \begin{document} command.
-%%
-\newcommand{\vdag}{(v)^\dagger}
-\newcommand\aastex{AAS\TeX}
-\newcommand\latex{La\TeX}
+\usepackage{multirow}
 
-%% Tells LaTeX to search for image files in the 
-%% current directory as well as in the figures/ folder.
-\graphicspath{{./}{figures/}}
+\usepackage{xcolor}
+\usepackage{ulem}
 
-%% Reintroduced the \received and \accepted commands from AASTeX v5.2
-\received{January 1, 2018}
-\revised{January 7, 2018}
-\accepted{\today}
-%% Command to document which AAS Journal the manuscript was submitted to.
-%% Adds "Submitted to " the arguement.
-\submitjournal{ApJ}
+\setlength{\textwidth}{6.5in}
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
 
-%% Mark up commands to limit the number of authors on the front page.
-%% Note that in AASTeX v6.2 a \collaboration call (see below) counts as
-%% an author in this case.
-%
-%\AuthorCollaborationLimit=3
-%
-%% Will only show Schwarz, Muench and "the AAS Journals Data Scientist 
-%% collaboration" on the front page of this example manuscript.
-%%
-%% Note that all of the author will be shown in the published article.
-%% This feature is meant to be used prior to acceptance to make the
-%% front end of a long author article more manageable. Please do not use
-%% this functionality for manuscripts with less than 20 authors. Conversely,
-%% please do use this when the number of authors exceeds 40.
-%%
-%% Use \allauthors at the manuscript end to show the full author list.
-%% This command should only be used with \AuthorCollaborationLimit is used.
+\setlength{\textheight}{9.in}
+\setlength{\voffset}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\headsep}{0.25in}
+\setlength{\headheight}{0in}
 
-%% The following command can be used to set the latex table counters.  It
-%% is needed in this document because it uses a mix of latex tabular and
-%% AASTeX deluxetables.  In general it should not be needed.
-%\setcounter{table}{1}
+
+%Some handy-dandy commands
+%***Distance and Length***
+\newcommand{\meters}{\mbox{m}}
+\newcommand{\cm}{\mbox{cm}}
+\newcommand{\km}{\mbox{km}}
+\newcommand{\dpc}{d_{pc}}
+\newcommand{\au}{\mbox{AU}}
+\newcommand{\microns}{\mu\mbox{m}}
+\newcommand{\rsun}{R_{\sun}}
+\newcommand{\rjup}{R_J}
+\newcommand{\rearth}{R_{\earth}}
+
+%***Times***
+\newcommand{\hours}{\mbox{ hrs}}
+\newcommand{\seconds}{\mbox{ s}}
+\newcommand{\years}{\mbox{ yrs}}
+
+%**Mass**
+\newcommand{\kg}{\mbox{kg}}
+\newcommand{\msun}{M_{\sun}}
+\newcommand{\mearth}{M_{\earth}}
+\newcommand{\mjup}{M_J}
+
+
+
+
+
+
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}    % max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8} % max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9} % fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}  % allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}      % require fuller float pages
+        % N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}   % require fuller float pages
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -145,89 +103,35 @@
 
 \begin{document}
 
-\title{GMagAO-X: extreme adaptive optics fed coronagraphy for GMT at first light}
+%*****************
+% cover page
+%****************
 
-%% LaTeX will automatically break titles if they run longer than
-%% one line. However, you may use \\ to force a line break if
-%% you desire. In v6.2 you can include a footnote in the title.
+\raggedright
+\huge
+Astro2020 APC White Paper \linebreak
 
-%% A significant change from earlier AASTEX versions is in the structure for 
-%% calling author and affilations. The change was necessary to implement 
-%% autoindexing of affilations which prior was a manual process that could 
-%% easily be tedious in large author manuscripts.
-%%
-%% The \author command is the same as before except it now takes an optional
-%% arguement which is the 16 digit ORCID. The syntax is:
-%% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
-%%
-%% This will hyperlink the author name to the author's ORCID page. Note that
-%% during compilation, LaTeX will do some limited checking of the format of
-%% the ID to make sure it is valid.
-%%
-%% Use \affiliation for affiliation information. The old \affil is now aliased
-%% to \affiliation. AASTeX v6.2 will automatically index these in the header.
-%% When a duplicate is found its index will be the same as its previous entry.
-%%
-%% Note that \altaffilmark and \altaffiltext have been removed and thus 
-%% can not be used to document secondary affiliations. If they are used latex
-%% will issue a specific error message and quit. Please use multiple 
-%% \affiliation calls for to document more than one affiliation.
-%%
-%% The new \altaffiliation can be used to indicate some secondary information
-%% such as fellowships. This command produces a non-numeric footnote that is
-%% set away from the numeric \affiliation footnotes.  NOTE that if an
-%% \altaffiliation command is used it must come BEFORE the \affiliation call,
-%% right after the \author command, in order to place the footnotes in
-%% the proper location.
-%%
-%% Use \email to set provide email addresses. Each \email will appear on its
-%% own line so you can put multiple email address in one \email call. A new
-%% \correspondingauthor command is available in V6.2 to identify the
-%% corresponding author of the manuscript. It is the author's responsibility
-%% to make sure this name is also in the author list.
-%%
-%% While authors can be grouped inside the same \author and \affiliation
-%% commands it is better to have a single author for each. This allows for
-%% one to exploit all the new benefits and should make book-keeping easier.
-%%
-%% If done correctly the peer review system will be able to
-%% automatically put the author and affiliation information from the manuscript
-%% and save the corresponding author the trouble of entering it by hand.
+GMagAO-X: extreme adaptive optics fed coronagraphy for GMT at first light \linebreak
+\normalsize
 
-\correspondingauthor{Jared R. Males}
-\email{jrmales@email.arizona.edu}
+\noindent \textbf{Thematic Areas:} \linebreak
+\hspace*{60pt} $\square$ Planetary Systems \linebreak
+\hspace*{60pt} $\square$ Star and Planet Formation \linebreak
+\hspace*{60pt}  $\square$  Stars and Stellar Evolution \linebreak
+  
+\textbf{Corresponding Author:}
 
-\author{Jared R. Males}
-\affiliation{University of Arizona}
+Name:Jared R. Males \linebreak
+Institution:  University of Arizona \linebreak
+Email: jrmales@email.arizona.edu \linebreak
+ 
+\textbf{Co-authors:} (names and institutions)
+  \linebreak
+Laird M. Close (University of Arizona) \\
+Olivier Guyon (University of Arizona, Subaru Telescope)
 
-\author{Laird M. Close}
-\affil{University of Arizona}
-
-
-%% Note that the \and command from previous versions of AASTeX is now
-%% depreciated in this version as it is no longer necessary. AASTeX 
-%% automatically takes care of all commas and "and"s between authors names.
-
-%% AASTeX 6.2 has the new \collaboration and \nocollaboration commands to
-%% provide the collaboration status of a group of authors. These commands 
-%% can be used either before or after the list of corresponding authors. The
-%% argument for \collaboration is the collaboration identifier. Authors are
-%% encouraged to surround collaboration identifiers with ()s. The 
-%% \nocollaboration command takes no argument and exists to indicate that
-%% the nearby authors are not part of surrounding collaborations.
-
-%% Mark off the abstract in the ``abstract'' environment. 
-\begin{abstract}
-
-Some abstract workds.
-\end{abstract}
-
-%% Keywords should appear after the \end{abstract} command. 
-%% See the online documentation for the full list of available subject
-%% keywords and the rules for their use.
-\keywords{editorials, notices --- 
-miscellaneous --- catalogs --- surveys}
-
+\textbf{Abstract:} We describe plans for an "extreme" adaptive optics (ExAO) system for the Giant Magellan Telescope (GMT).  This instrument concept, currently called "GMagAO-X", is based on using existing deformable mirror (DM) and wavefront sensor (WFS) detector technology to implement a 21,000 actuator, 2000 Hz system.  Combined with state of the art coronagraphy, GMagAO-X will enable detection and characterization of exoplanets at extreme contrast ratios in groundbreaking variety.  This will include young giant planets (both from thermal emission and in the H-alpha acretion signature), older giant planets in reflected light, and temperate terrestrial planets orbiting nearby late-type stars also in reflected light.  GMagAO-X will also enable studies of circumstellar disks at unprecedented angular resolution in the visible and near-IR.  Since it is based on existing proven technology, GMagAO-X can be available at, or shortly-after, first light of the GMT, allowing the observatory to deliver groundbreaking exoplanet science almost immediately.  
+\clearpage
 
 
 \section{Introduction: A path to high-contrast AO imaging at/near GMT first light} \label{sec:intro}
@@ -237,7 +141,7 @@ The concept we describe here, which we call “GMagAO-X” is based on scaling t
 The larger diameter of the GMT results in a significant improvement in post-coronagraph contrast.  Males \& Guyon (2018) presented a semi-analytic framework for modeling systems such as the one we propose here, including the effects of AO control dynamics.  The result for an I=8th mag star, such as Proxima Centauri, are shown in Figure 2.
 
 \section{Key Science Goals and Objectives}
-\emph{The papers should summarize the most important
+\textit{The papers should summarize the most important
 scientific goals and objectives, justifying the timeliness of the scientific opportunities, and
 placing them in as broad a context as possible. We encourage the authors, where relevant, to
 reference Science White Papers submitted to the Survey (these are posted on the Astro2020
@@ -246,10 +150,10 @@ web sites and other outside materials, but should strive to make this section as
 as possible.}
 
 \section{Technical Overview}
-\emph{The team should provide a description of the technical aspects of the
+\textit{The team should provide a description of the technical aspects of the
 pursuit, including a description of the essential performance parameters for achieving the
 project's science goals.}
-\emph{For ground-based activities/projects, papers should describe the telescope or
+\textit{For ground-based activities/projects, papers should describe the telescope or
 observatory architecture, key performance requirements, technical requirements,
 anticipated site and infrastructure requirements, as well as any public/private
 partnerships.}
@@ -258,19 +162,19 @@ partnerships.}
 
 
 \section{Technology Drivers} 
-\emph{If the pursuit requires new technologies, the paper should identify and
+\textit{If the pursuit requires new technologies, the paper should identify and
 describe them, along with an outline of technology maturation plans and timescales.}
 
 \section{Organization, Partnerships, and Current Status}  
-\emph{All pursuits should describe the participating
+\textit{All pursuits should describe the participating
 organizations, any planned partnerships, and their current status.}
 
 \section{Schedule}
-\emph{The team should outline the development and operations schedule. The schedule
+\textit{The team should outline the development and operations schedule. The schedule
 should also indicate the operational lifetime of the pursuit.}
 
 \section{Cost Estimates}
-\emph{The team should provide any cost estimates that have been developed for the
+\textit{The team should provide any cost estimates that have been developed for the
 current version of the pursuit. This should include the date the cost estimate was performed,
 should reference the base fiscal year, the organization that performed the estimate, and the top
 level results of the estimate, broken out by the major development and operational phases.

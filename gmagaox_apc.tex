@@ -106,6 +106,7 @@
 %*****************
 % cover page
 %****************
+\thispagestyle{empty}
 
 \raggedright
 \huge
@@ -120,7 +121,7 @@ GMagAO-X: extreme adaptive optics fed coronagraphy for GMT at first light \lineb
 \hspace*{60pt}  $\square$  Stars and Stellar Evolution \linebreak
   
 \textbf{Corresponding Author:}
-Name:Jared R. Males \linebreak
+Name: Jared R. Males \linebreak
 Institution:  University of Arizona \linebreak
 Email: jrmales@email.arizona.edu \linebreak
  
@@ -131,13 +132,13 @@ Olivier Guyon (University of Arizona, Subaru Telescope)
 
 \textbf{Abstract:} We describe plans for an "extreme" adaptive optics (ExAO) system for the Giant Magellan Telescope (GMT).  This instrument concept, currently called "GMagAO-X", is based on using existing deformable mirror (DM) and wavefront sensor (WFS) detector technology to implement a 21,000 actuator, 2000 Hz system.  Combined with state of the art coronagraphy, GMagAO-X will enable detection and characterization of exoplanets at extreme contrast ratios in groundbreaking variety.  This will include young giant planets (both from thermal emission and in the H-alpha acretion signature), older giant planets in reflected light, and temperate terrestrial planets orbiting nearby late-type stars also in reflected light.  GMagAO-X will also enable studies of circumstellar disks at unprecedented angular resolution in the visible and near-IR.  Since it is based on existing proven technology, GMagAO-X can be available at, or shortly-after, first light of the GMT, allowing the observatory to deliver groundbreaking exoplanet science almost immediately.  
 \clearpage
-
+\setcounter{page}{1}
 
 \section{Introduction: A path to high-contrast AO imaging at/near GMT first light} \label{sec:intro}
-The MagAO-X extreme adaptive optics (ExAO) system for the Magellan Clay telescope is currently under construction (Males et al. (2018), Close et al. (2018)).  It consists of a 2040 actuator deformable mirror (DM), 3.6 kHz pyramid wavefront sensor (PyWFS), a suite of coronagraphs, and employs various post-coronagraph wavefront sensing and control techniques to optimize contrast.  MagAO-X is optimized for work in the visible, red-optical, and near-IR.  Destined for the same site as the GMT, it is an ideal testbed and demonstration system for a potential ExAO system for the GMT.
+The MagAO-X extreme adaptive optics (ExAO) system for the Magellan Clay telescope is currently under construction \citep{2018SPIE10703E..09M, 2018SPIE10703E..4YC}.  It consists of a 2040 actuator deformable mirror (DM), 3.6 kHz pyramid wavefront sensor (PyWFS), a suite of coronagraphs, and employs various post-coronagraph wavefront sensing and control techniques to optimize contrast.  MagAO-X is optimized for work in the visible, red-optical, and near-IR.  Destined for the same site as the GMT, it is an ideal testbed and demonstration system for a potential ExAO system for the GMT.
 The concept we describe here, which we call “GMagAO-X” is based on scaling the 2000 actuator DM of MagAO-X from the 6.5 m Clay to the 25.4 m GMT, maintaining the same actuator spacing when projected onto the primary mirror.  This scaling works out to one 3000 actuator DM per 8.4 m diameter segment.  We discuss the opto-mechanical implementation of this below.  Here we note that by preserving projected actuator pitch and AO system speed, such a system will achieve the same Strehl ratio on the GMT as is projected for MagAO-X.  We show this performance in Figure X.
 
-The larger diameter of the GMT results in a significant improvement in post-coronagraph contrast.  Males \& Guyon (2018) presented a semi-analytic framework for modeling systems such as the one we propose here, including the effects of AO control dynamics.  The result for an I=8th mag star, such as Proxima Centauri, are shown in Figure 2.
+The larger diameter of the GMT results in a significant improvement in post-coronagraph contrast.  \citet{2018JATIS...4a9001M} presented a semi-analytic framework for modeling systems such as the one we propose here, including the effects of AO control dynamics.  The result for an I=8th mag star, such as Proxima Centauri, are shown in Figure 2.
 
 \section{Key Science Goals and Objectives}
 \textit{The papers should summarize the most important
@@ -150,17 +151,36 @@ as possible.}
 
 \subsection{A GMT Survey of Temperate Exoplanets and a Search for Biosignatures on the Nearest Terrestrial Worlds}
 
-To demonstrate the enormous scientific potential of an ExAO+Coronagraph instrument on the GMT, we analyze the existing database of known exoplanets maintained by the NASA Exoplanet Science Institute (NExScI).  For each star with a confirmed exoplanet we normalize any missing parameters, such as luminosity or I magnitude, using a main sequence table.  Most relevant planets are known from radial velocity (RV) surveys.  If no inclination is known, we use $\sin(60)$ to obtain a mass estimate.  The radii of these planets is determined using a mass-to-radius relationship which assumes terrestrial density to $4.1 M_Earth$ ($1.6 R_Earth$), and then uses a fit to Neptune, Uranus, Saturn, Jupiter, and the giant planet models of CITE Fortney (2007).  This relationship is thus well suited to the “lightly irradiated” planets resolvable with the GMT.
+To demonstrate the enormous scientific potential of an ExAO+Coronagraph instrument on the GMT, we analyze the existing database of known exoplanets maintained by the NASA Exoplanet Science Institute (NExScI).  For each star with a confirmed exoplanet we normalize any missing parameters, such as luminosity or I magnitude, using a main sequence table.  Most relevant planets are known from radial velocity (RV) surveys.  If no inclination is known, we use $\sin(60)$ to obtain a mass estimate.  The radii of these planets is determined using a mass-to-radius relationship which assumes terrestrial density to $4.1 M_\Earth$ ($1.6 R_\Earth$), and then uses a fit to Neptune, Uranus, Saturn, Jupiter, and the giant planet models of \citet{2007ApJ...659.1661F}.  This relationship is thus well suited to the “lightly irradiated” planets resolvable with the GMT.
 
-Once an exoplanet’s radius is estimated, and its equilibrium temperature estimated from the host star parameters and its orbit, we can estimate its albedo.  For planets $< 1.6 R_Earth$ we use the Earthshine spectrum of CITE Turnbull (2006) normalized to EPOXI photometry (CITE Cowan and Strait, 2013), assuming a Lambertian phase curve. For larger planets, we use the geometric albedo grid of CITE Cahoy et al (2010), which includes phase.  With the radius and geometric albedo, we calculate the mean contrast in reflected light over a planet’s observable orbit.	
+Once an exoplanet’s radius is estimated, and its equilibrium temperature estimated from the host star parameters and its orbit, we can estimate its albedo.  For planets $< 1.6 R_\Earth$ we use the Earthshine spectrum of \citet{2006ApJ...644..551T} normalized to EPOXI photometry \citep{2013ApJ...765L..17C}, assuming a Lambertian phase curve. For larger planets, we use the geometric albedo grid of CITE Cahoy et al (2010), which includes phase.  With the radius and geometric albedo, we calculate the mean contrast in reflected light over a planet’s observable orbit.	
 
-Our baseline performance assumptions are that we reach a post-AO contrast of 10x worse than the frozen-flow predictive control predictions of Males and Guyon (2018).  This is done on a per-guidestar basis, taking into account AO performance as a function of brightness.  The factor of 10 is intended to account for boiling and other non-frozen-flow disturbances, as well as sub-optimal as-built instrument performance. We assume an excellent coronagraph which suppresses the Airy pattern and also suppresses pinning of speckles.   We further assume that post-coronagraph and non-common-path WFS\&C [DEFINE?] is used to suppress quasi-static (long-lived) speckles to a level well below the residual atmospheric speckles.  The resulting residual noise sources are then atmospheric speckles and photon noise.  We include a semi-analytic model of residual atmospheric speckle lifetimes, and thus calculate SNR vs time for an exoplanet of a given brightness with these noise sources.
+Our baseline performance assumptions are that we reach a post-AO contrast of 10x worse than the frozen-flow predictive control predictions of \citet{2018JATIS...4a9001M}.  This is done on a per-guidestar basis, taking into account AO performance as a function of brightness.  The factor of 10 is intended to account for boiling and other non-frozen-flow disturbances, as well as sub-optimal as-built instrument performance. We assume an excellent coronagraph which suppresses the Airy pattern and also suppresses pinning of speckles.   We further assume that post-coronagraph and non-common-path WFS\&C [DEFINE?] is used to suppress quasi-static (long-lived) speckles to a level well below the residual atmospheric speckles.  The resulting residual noise sources are then atmospheric speckles and photon noise.  We include a semi-analytic model of residual atmospheric speckle lifetimes, and thus calculate SNR vs time for an exoplanet of a given brightness with these noise sources.
 In Figure XX we show the 102 currently-known planets which could be detected in a single night (10 hrs) of telescope time each.  We estimate that a total of roughly 1 month of telescope nights will be needed for the entire survey.  This survey will sample a range of planet radii, including Earth-like and Neptune-like exoplanets.  It also spans a range of equilibrium temperatures corresponding to the inner Solar system.  Planets with these parameters have never been imaged or characterized in reflected light before.
 
-In the right hand panel of Figure 3 we highlight the small ($< R_Neptune$) sample.  In particular, we note the 5 terrestrial and potentially habitable planets orbiting within the “habitable zone” of their host star.  Once detected in broad-band imaging, these planets will then be characterized in detail.  Characterizing these exoplanets with GMagAO-X in refected light shortly after first-light of the GMT will allow a search for biosignatures around the nearest known temperate terrestrial worlds.
+In the right hand panel of Figure 3 we highlight the small ($< R_{Nep}$) sample.  In particular, we note the 5 terrestrial and potentially habitable planets orbiting within the “habitable zone” of their host star.  Once detected in broad-band imaging, these planets will then be characterized in detail.  Characterizing these exoplanets with GMagAO-X in refected light shortly after first-light of the GMT will allow a search for biosignatures around the nearest known temperate terrestrial worlds.
    
 Next we assume that we achieve the same level of turbulence rejection, but are only able to suppress quasi-static speckles to a similar level and are hence dominated by long-lived correlated noise.  In this case, we would employ the high dispersion coronagraphy technique (HDC, [CITE] Mawet et al (2017)), where template cross-correlation matching is used to detect the reflected stellar spectrum ([CITE] Lovis et al, 2017).  While less efficient than photometry for short-lived noise sources, HDC allows for root(t) improvement of SNR even in the presence of long-lived spatially correlated speckle noise.  To analyze this case, we use the BT-Settl  ( [CITE] Allard, 2014) to calculate the cross-correlation strength appropriate for a given spectral type, and then estimate the exposure time to detect each exoplanet in the NExScI database. Under this pessimistic performance case, the total number of detected planets (in 10 hrs or less each) is reduced to 63.
 In Table 1, we summarize the parameters of the temperate terrestrial (potentially habitable) planets.  Once the initial detection is performed (in the integration times shown), these planets will be extensively characterized to search for biosignatures.
+
+REFERENCE SCIENCE WHITE PAPERS
+
+\subsection{ H-alpha Planets}
+LAIRD PLEASE ADD.  
+
+REFERENCE SCIENCE WHITE PAPERS
+
+\subsection{ Other Exoplanet Science}
+
+REFERENCE SCIENCE WHITE PAPERS
+
+\subsection{ Disks }
+
+REFERENCE SCIENCE WHITE PAPERS
+
+\subsection{ Stellar Spectra}
+
+REFERENCE SCIENCE WHITE PAPERS
 
 \section{Technical Overview}
 \textit{The team should provide a description of the technical aspects of the
@@ -171,12 +191,14 @@ observatory architecture, key performance requirements, technical requirements,
 anticipated site and infrastructure requirements, as well as any public/private
 partnerships.}
 
-
+INSTRUMENT DESCRIPTION
 
 
 \section{Technology Drivers} 
 \textit{If the pursuit requires new technologies, the paper should identify and
 describe them, along with an outline of technology maturation plans and timescales.}
+
+PUT PHASING TESTBED STUFF HERE
 
 \section{Organization, Partnerships, and Current Status}  
 \textit{All pursuits should describe the participating
@@ -212,7 +234,11 @@ Medium \$20M - 70M
 Large $>$\$70M
 
 
-
+\clearpage
+\thispagestyle{empty}
+% References
+\bibliography{references} % bibliography data in report.bib
+\bibliographystyle{apj} % makes bibtex use spiebib.bst
 
 \end{document}
 

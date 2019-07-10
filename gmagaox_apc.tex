@@ -7,6 +7,7 @@
 \usepackage{rotating}
 \let\captionbox\undefined
 %\usepackage{caption}
+\usepackage[font=footnotesize,labelfont={footnotesize,bf}]{caption}
 
 %\captionsetup{width=6.3in,font=footnotesize}
 \usepackage{wrapfig}
@@ -20,12 +21,20 @@
 \usepackage{xcolor}
 \usepackage{ulem}
 
+\usepackage[compact]{titlesec}
+\titleformat{\section}{\normalsize\bfseries\centering}{\thesection}{1em}{}
+\titleformat{\subsection}[runin]{\normalsize\bfseries}{\thesubsection}{0.5em}{}[:$\:\:\:$]
+\titleformat{\subsubsection}[runin]{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}[:$\:\:\:$]
+\titlespacing{\section}{2pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{2pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{2pt}{0pt}
+
 \setlength{\textwidth}{6.5in}
 \setlength{\hoffset}{0in}
 \setlength{\oddsidemargin}{0in}
 \setlength{\evensidemargin}{0in}
 
-\setlength{\textheight}{9.in}
+\setlength{\textheight}{8.75in}
 \setlength{\voffset}{0in}
 \setlength{\topmargin}{0in}
 \setlength{\headsep}{0.25in}
@@ -112,7 +121,7 @@
 \huge
 Astro2020 APC White Paper \linebreak
 
-GMagAO-X: extreme adaptive optics fed coronagraphy for GMT at first light \linebreak
+GMagAO-X: extreme adaptive optics \& coronagraphy for GMT at first light \linebreak
 \normalsize
 
 \noindent \textbf{Thematic Areas:} \linebreak
@@ -136,37 +145,32 @@ Olivier Guyon (University of Arizona, Subaru Telescope)
 
 \section{Introduction: A path to high-contrast AO imaging at/near GMT first light} \label{sec:intro}
 
-\begin{wrapfigure}[15]{r}{3.3in}
+\begin{wrapfigure}[12]{r}{3.3in}
 \centering
-\vspace{-0.4in}
+\vspace{-0.3in}
 \includegraphics[width=3.1in]{figures/fig1.png}
-\vspace{-0.2in}
-\caption{ Strehl Ratio vs. guidestar magnitude for 13.5 cm actuator pitch and a 2 kHz ExAO system.  These curves are from MagAO-X simulations \citep{2018SPIE10703E..09M}.  By maintaining the same actuator pitch, these curves can be extrapolated to the GMT ExAO system we propose here. \label{fig:strehl} }
+\vspace{-0.1in}
+\caption{ Strehl Ratio vs. guidestar magnitude from MagAO-X simulations \citep{2018SPIE10703E..09M}.  By maintaining the same actuator pitch, these curves can be extrapolated to the 25.4 m GMT and GMagAO-X. \label{fig:strehl} }
 \end{wrapfigure}
 
-The MagAO-X extreme adaptive optics (ExAO) system for the Magellan Clay telescope is currently under construction \citep{2018SPIE10703E..09M, 2018SPIE10703E..4YC}.  It consists of a 2040 actuator deformable mirror (DM), 3.6 kHz pyramid wavefront sensor (PyWFS), a suite of coronagraphs, and employs various post-coronagraph wavefront sensing and control techniques to optimize contrast.  MagAO-X is optimized for work in the visible, red-optical, and near-IR.  Destined for the same site as the GMT, it is an ideal testbed and demonstration system for a potential ExAO system for the GMT.
-The concept we describe here, which we call “GMagAO-X” is based on scaling the 2000 actuator DM of MagAO-X from the 6.5 m Clay to the 25.4 m GMT, maintaining the same actuator spacing when projected onto the primary mirror.  This scaling works out to one 3000 actuator DM per 8.4 m diameter segment.  We discuss the opto-mechanical implementation of this below.  Here we note that by preserving projected actuator pitch and AO system speed, such a system will achieve the same Strehl ratio on the GMT as is projected for MagAO-X.  We show this performance in Figure \ref{fig:strehl}.
+The MagAO-X extreme adaptive optics (ExAO) system for the Magellan Clay telescope is currently under construction \citep{2018SPIE10703E..09M, 2018SPIE10703E..4YC}.  It consists of a 2040 actuator deformable mirror (DM), 3.6 kHz pyramid wavefront sensor (PyWFS), a suite of coronagraphs, and employs various post-coronagraph wavefront sensing and control (WFS\&C) techniques to optimize contrast.  MagAO-X is optimized for work in the visible, red-optical, and near-IR.  Destined for the same site as the GMT, it is an ideal testbed and demonstration system for a potential ExAO system for the GMT.
 
-\begin{wrapfigure}[14]{r}{3.2in}
+The concept we describe here, ``GMagAO-X'', is based on scaling the 2040 actuator DM from the 6.5 m Clay to the 25.4 m GMT, maintaining the same projected actuator spacing on the primary mirror.  This scaling works out to one 3000 actuator DM per 8.4 m segment.  We discuss the opto-mechanical implementation of this below.  By preserving projected actuator pitch and AO system speed, such a system will achieve the same Strehl ratio on the GMT as is projected for MagAO-X.  We show this performance in Figure \ref{fig:strehl}.
+
+\begin{wrapfigure}[13]{r}{3.0in}
 \centering
 \vspace{-0.4in}
 \includegraphics[width=3.1in]{figures/fig2.pdf}
-\vspace{-0.2in}
+\vspace{-0.25in}
 \caption{ Post-coronagraph raw contrast for GMagAO-X using the semi-analytic model of Males and Guyon (2018), for an I=8 mag star such as Prox. Cen.   \label{fig:contrast} }
 \end{wrapfigure}
 
-The larger diameter of the GMT results in a significant improvement in post-coronagraph contrast. Due to the finer sampling of atmospheric turbulence power, this improvement goes as $\propto D^2$, hence the GMT will deliver a 15x improvement over the 6.5 m Clay telescope in terms of raw contrast.  The resulting photon-noise limited exposure time improvement goes as $\propto D^4$, and improvement in by a factor of 233.  \citet{2018JATIS...4a9001M} presented a semi-analytic framework for modeling systems such as the one we propose here, including the effects of AO control dynamics.  The result for an I=8th mag star, such as Proxima Centauri, is shown in Figure 2.
+Due to the finer sampling of atmospheric turbulence power, the larger diameter of the GMT results in a significant improvement in post-coronagraph contrast. This goes as $\propto D^2$, hence the GMT will deliver a 15x improvement over the 6.5 m Clay telescope in terms of raw contrast.  The resulting photon-noise limited exposure time improvement goes as $\propto D^4$, an improvement in by a factor of 233.  \citet{2018JATIS...4a9001M} presented a semi-analytic framework for modeling ExAO systems.  The result for an I=8th mag star, such as Proxima Centauri, is shown in Figure 2.
 
 \section{Key Science Goals and Objectives}
-\textit{The papers should summarize the most important
-scientific goals and objectives, justifying the timeliness of the scientific opportunities, and
-placing them in as broad a context as possible. We encourage the authors, where relevant, to
-reference Science White Papers submitted to the Survey (these are posted on the Astro2020
-website, and may be referenced by author and title). Submitters may also make reference to
-web sites and other outside materials, but should strive to make this section as self-contained
-as possible.}
 
-Here we highlight some of the most ambitious goals for GMagAO-X.  We emphasize that an instrument designed and optimized to conduct the below science cases will be able to carry out many less demanding science programs, such as discovery and characterization of young self-luminous exoplanets, the study of tight binary stars, high spatial and spectral resolution imaging of stellar surfaces, and the study of asteroid surfaces at high spatial resolution (to name a few).
+Here we highlight three of the most ambitious goals for GMagAO-X.  We emphasize that an instrument optimized to conduct these science cases will be able to carry out many less demanding science programs, such as discovery and characterization of giant exoplanets \citep[Astro2020:][]{2019BAAS...51c.496B,2019BAAS...51c.505B}, the study of tight binary stars \citep[Astro2020:][]{2019BAAS...51c.483S}, high spatial and spectral resolution imaging of stellar surfaces, and the study of asteroid surfaces at high spatial resolution (to name a few).
+
 
 \subsection{A GMT Survey of Temperate Exoplanets and a Search for Biosignatures on the Nearest Terrestrial Worlds}
 
@@ -174,13 +178,14 @@ To demonstrate the enormous scientific potential of an ExAO+Coronagraph instrume
 
 Once an exoplanet’s radius is estimated, and its equilibrium temperature estimated from the host star parameters and its orbit, we can estimate its albedo.  For planets $< 1.6 R_\Earth$ we use the Earthshine spectrum of \citet{2006ApJ...644..551T} normalized to EPOXI photometry \citep{2013ApJ...765L..17C}, assuming a Lambertian phase curve. For larger planets, we use the geometric albedo grid of \citet{2010ApJ...724..189C}, which includes phase.  With the radius and geometric albedo, we calculate the mean contrast in reflected light over a planet’s observable orbit.	
 
-Our baseline performance assumptions are that we reach a post-AO contrast of 10x worse than the frozen-flow predictive control predictions of \citet{2018JATIS...4a9001M}.  This is done on a per-guidestar basis, taking into account AO performance as a function of brightness.  The factor of 10 is intended to account for boiling and other non-frozen-flow disturbances, as well as sub-optimal as-built instrument performance. We assume an excellent coronagraph which suppresses the Airy pattern and also suppresses pinning of speckles.   We further assume that post-coronagraph and non-common-path WFS\&C [DEFINE?] is used to suppress quasi-static (long-lived) speckles to a level well below the residual atmospheric speckles.  The resulting residual noise sources are then atmospheric speckles and photon noise.  We include a semi-analytic model of residual atmospheric speckle lifetimes, and thus calculate SNR vs time for an exoplanet of a given brightness with these noise sources.
-In Figure \ref{fig:planets} we show the 102 currently-known planets which could be detected in a single night (10 hrs) of telescope time each.  We estimate that a total of roughly 1 month of telescope nights will be needed for the entire survey.  This survey will sample a range of planet radii, including Earth-like and Neptune-like exoplanets.  It also spans a range of equilibrium temperatures corresponding to the inner Solar system.  Planets with these parameters have never been imaged or characterized in reflected light before.
+Our baseline performance assumptions are that we reach a post-AO contrast of 10x worse than the frozen-flow predictive control predictions of \citet{2018JATIS...4a9001M}.  This is done on a per-guidestar basis, taking into account AO performance as a function of brightness.  The factor of 10 is intended to account for boiling and other non-frozen-flow disturbances, as well as sub-optimal as-built instrument performance. We assume an excellent coronagraph which suppresses the Airy pattern and also suppresses pinning of speckles.   We further assume that post-coronagraph and non-common-path WFS\&C is used to suppress quasi-static (long-lived) speckles to a level well below the residual atmospheric speckles.  The resulting residual noise sources are then atmospheric speckles and photon noise.  We include a semi-analytic model of residual atmospheric speckle lifetimes, and thus calculate SNR vs time for an exoplanet of a given brightness with these noise sources.
+In Figure \ref{fig:planets} we show the 102 currently-known planets which could be detected in a single night (10 hrs) of telescope time each.  We estimate that a total of roughly 1 month of telescope nights will be needed for the entire survey.  This survey will sample a range of planet radii, including Earth-like and Neptune-like exoplanets.  It also spans a range of equilibrium temperatures corresponding to the inner Solar system.  Planets with these parameters have never been imaged or characterized in reflected light before.  See the Astro2020 science white paper by \citet{2019BAAS...51c.345M}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=6in]{figures/fig3.png}
 \caption{GMagAO-X will enable characterization of over 100 currently known (from RV) planets.  The figure at left shows the full sample, plotted as estimated radius vs. Earth-equivalent separation (or “instellation”).  At right we highlight the small planets, and label the potentially habitable terrestrial planets. \label{fig:planets}}
+\vspace{-0.3in}
 \end{figure}
 
 In the right hand panel of Figure \ref{fig:planets} we highlight the small ($< R_{Nep}$) sample.  In particular, we note the 5 terrestrial and potentially habitable planets orbiting within the “habitable zone” of their host star.  Once detected in broad-band imaging, these planets will then be characterized in detail.  Characterizing these exoplanets with GMagAO-X in refected light shortly after first-light of the GMT will allow a search for biosignatures around the nearest known temperate terrestrial worlds.
@@ -189,11 +194,11 @@ Next we assume that we achieve the same level of turbulence rejection, but are o
 In Table 1, we summarize the parameters of the temperate terrestrial (potentially habitable) planets.  Once the initial detection is performed (in the integration times shown), these planets will be extensively characterized to search for biosignatures.
 
 \begin{table}[h!]
-\caption{Parameters of currently known terrestrial planets to be characterized by GMagAO-X. Here ``detection'' means an initial broad-band albedo measurement.\label{tab:tp}}
+\caption{Parameters of currently known terrestrial planets to be characterized by GMagAO-X. Exposure times are for an initial broad-band albedo measurement.\label{tab:tp}}
+\vspace{-0.2in}
 \centering
 \begin{tabu}{lccccccc}
                 &         &             &             &       &    & \multicolumn{2}{c}{ Exp. Time } \\
-                &         &             &             &   &        & \multicolumn{2}{c}{ for Detection }  \\
 Planet          & Dist.   & Sep.        & Instell.    &  Rad.         & Contrast         & \multicolumn{2}{c}{ [sec] }     \\
                 &  [pc]   & [mas]       & $S_{\Earth}$     &  $R_{\Earth}$        &         & Baseline   & Pessimistic \\ 
 \hline
@@ -207,41 +212,30 @@ GJ 667C c        &  6.8   &  18.4   &  1.0  &  1.66  &  8.2$\times 10 ^{-8}$  & 
 \end{tabu}
 \end{table}
 
-REFERENCE SCIENCE WHITE PAPERS
-
 \subsection{ Acreting Protoplanets (H-alpha Planets)}
-One of the greatest challenges to astronomy today is understanding the details of planet formation. Planet formation can be best informed by creating a complete sample of directly imaged protoplanets (separations, masses, accretion rates, etc. Apai et al. 2019; Sallum et al. 2019). But discovery of such protoplanets requires “catching them in the act of growing”. That means making a very sharp image that allows us to see the characteristic hydrogen gas accretion lines (Hydrogen alpha = $H\alpha$ = 656 nm is one of the strongest such lines). A clever optical trick (SDI) enables very high-contrast $H\alpha$ imaging by simultaneously making a $H\alpha$ image and a Continuum image on the GMagAO-X focal plane. 
+One of the greatest challenges to astronomy today is understanding the details of planet formation. Planet formation can be best informed by creating a complete sample of directly imaged protoplanets (separations, masses, accretion rates, etc. \citep[Astro2020 science white papers:][]{2019BAAS...51c.527S,2019BAAS...51c.475A}. But discovery of such protoplanets requires “catching them in the act of growing”. That means making a very sharp image that allows us to see the characteristic hydrogen gas accretion lines (Hydrogen alpha = $H\alpha$ = 656 nm is one of the strongest such lines). A clever optical trick (SDI) enables very high-contrast $H\alpha$ imaging by simultaneously making a $H\alpha$ image and a Continuum image on the GMagAO-X focal plane. 
 
-Today our current SDI data reduction pipeline with MagAO's SDI camera produces very high-contrast images by first subtracting the scaled continuum image from the $H\alpha$ image to reveal $H\alpha$ protoplanets since with PCA, ADI and SDI reduction pipelines we remove most of the contaminating starlight starlight. In this manner, we have already made impressive detections of $H\alpha$ Jupiter mass protoplanets at 15-20AU with MagAO SDI (HD142527 B (Close et al. 2014); LkCa 15 b (Sallum et al. 2015); and PDS 70 b (Wagner at al. 2018)). 
+Today our current SDI data reduction pipeline with MagAO's SDI camera produces very high-contrast images by first subtracting the scaled continuum image from the $H\alpha$ image to reveal $H\alpha$ protoplanets since with PCA, ADI and SDI reduction pipelines we remove most of the contaminating starlight starlight. In this manner, we have already made impressive detections of $H\alpha$ Jupiter mass protoplanets at 15-20AU with MagAO SDI (\citet[HD142527 B,][]{2014ApJ...781L..30C}; \citet[LkCa 15 b,][]{2015Natur.527..342S}; and \citet[PDS 70 b,][]{2018ApJ...863L...8W}). 
 
-Projecting to  GMagAO-X's contrasts we will be able to extend our search down to relatively low-mass planets like accreting Neptunes at just $\sim1$ AU separations (Sallum et al. 2019). This will allow a complete sample of southern gas protoplanets formation within $\sim200$ pc. 
+Projecting to  GMagAO-X's contrasts we will be able to extend our search down to relatively low-mass planets like accreting Neptunes at just $\sim1$ AU separations \citep{2019BAAS...51c.527S}. This will allow a complete sample of southern gas protoplanets formation within $\sim200$ pc. 
 
-SCIENCE WHITE PAPERS
-
-Sallum et al. 2019
-Imaging Giant Protoplanets with the ELTs
-\\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.527S/abstract\\
-Apai et al. 2019  Planetary Habitability Informed by Planet Formation and Exoplanet Demographics
-\\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.475A/abstract\\
-
-
+% SCIENCE WHITE PAPERS
+% 
+% Sallum et al. 2019
+% Imaging Giant Protoplanets with the ELTs
+% \\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.527S/abstract\\
+% Apai et al. 2019  Planetary Habitability Informed by Planet Formation and Exoplanet Demographics
+% \\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.475A/abstract\\
 
 
 
 
 
 
-
-
-
-
-\subsection{ Other Exoplanet Science}
-
-REFERENCE SCIENCE WHITE PAPERS
 
 \subsection{ Disks }
-Disk science is critical to further our understanding of how planets and stars form Jang-Condell et al. (2019).
-Disk science is the most challenging application of adaptive optics because
+Disk science is critical to further our understanding of how planets and stars form \citep[see Astro2020 science whitepapers:][]{2019BAAS...51c.346J, 2019BAAS...51c.445W, 2019BAAS...51c.566D}.
+It is a very challenging application of adaptive optics because
 the disks are low surface brightness and extended objects exactly like the
 uncorrected seeing halo. The best way to reveal disks is to have a high Strehl
 system that puts little light into the region where the disk is. Secondarily,
@@ -274,10 +268,10 @@ a large wavelength grasp from visible through near-infrared since scattering
 depends on the ratio of the wavelength the grain size. This will harness GMagAO-X's ability to
 image down to $\sim$ 0.5 microns.
 
-SCIENCE WHITE PAPERS
+%SCIENCE WHITE PAPERS
 
-Jang-Condell et al. 2019 Protoplanetary Disk Science Enabled by Extremely Large Telescopes
-\\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.346J/abstract\\
+%Jang-Condell et al. 2019 Protoplanetary Disk Science Enabled by Extremely Large Telescopes
+%\\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.346J/abstract\\
 
 
 \section{Technical Overview}
@@ -294,7 +288,9 @@ TECHNICAL DESCRIPTION OF GMT (including site, consortium, etc)
 \begin{figure}[h!]
 \centering
 \includegraphics[width=6in]{figures/GMagAOX__fig4_no_labels_V2.png}
+\vspace{-0.2in}
 \caption{ GMagAO-X concept shown within the Auxiliary Port volume and mounted on the GMT elevation axis. The thick blue arrow shows the direction the light enters GMagAO-X after reflection off M3. This is a gravity invariant port which eliminates flexure and enables a vibration isolated (floating) optical bench. \label{fig:ap}}
+\vspace{-0.1in}
 \end{figure}
 
 In Figure \ref{fig:ap} we present our notional concept of how the GMagAO-X instrument could be mounted in a gravity invariant environment at the so-called Auxilliary Port (AP). The AP is essentially equivalent to a Nasmyth port on the GMT, being on the elevation axis and so is the only place on GMT that is both gravity invariant and can also be used for imaging.  Figure \ref{fig:ap} shows how GMagAO-X will appear when mounted at the elevation axis on the GMT. As the telescope moves in elevation the instrument stays fixed w.r.t. gravity. A floating optical table (with servo control on the position of the table-- utilizing the TMC PEPSII stability system) can be employed.  This will prevent vibrations above 10Hz from coupling into the instrument (lower frequency vibrations will be removed by the AO system). 
@@ -303,24 +299,23 @@ This notional concept has established the feasibility of mounting GMagAO-X on th
 
 \begin{figure} [h!]
 \centering
-\includegraphics[width=6in]{figures/pardm.png}
+\includegraphics[width=5in]{figures/pardm.png}
+\vspace{-0.1in}
 \caption{ Concept for a 7-segment 21,000 MEMS deformable mirror using a six-sided reflective prism.  In the cartoon at left all optical paths are the same length.  Pupils (conjugate to primary mirror segments) are the green planes. The center segment is passed through the central hole. Mechanical design renderings with different views show how such a "parallel DM" could be implemented.  \label{fig:pardm}}
+\vspace{-0.1in}
 \end{figure}
 
 Achieving the $\sim$13.5 cm projected sampling of the primary mirror requires $\sim$3000 actuators per 8.4 m segment, a total of 21,000 actuators on the GMT segments.   Achieving this with a monolithic DM would require a 188x188 format device, or $\sim$35,000 actuators. The largest currently in development DM is 128x128, and no such device has yet been delivered.  While some discussion are underway for larger devices, there are no no DMs for the foreseeable future which meet our requirements. To overcome this hurdle, we have proposed a novel optical design that combines seven 3000 actuator \textit{currently available} DMs from Boston Micromachines Corp. (BMC) to work in parallel to as a combined 21,000 actuator DM. We note this "parallel DM" concept could also be applied the TMT pupil with some modifications.  This concept is illustrated in Figure \ref{fig:pardm}.
 
-
-NEED BRIEF DISCUSSION OF FOCAL PLANES
+GMagAO-X will over wide wavelength coverage, extending from $\sim 0.4 \mu$m (g-band) to $\sim 2.4 \mu$m (K-band).  Focal planes will include broad-band (R$\sim$10) imagers, and fiber-fed IFUS offering spectral resolution from the R$\sim$1000 regime up to R$\sim$100,000 depending on the science case. Options include constructing new compact photonic spectrographs dedicated to GMagAO-X, and also using existing spectrographs at GMT such as G-CLEF.
 
 \section{Technology Drivers} 
-\textit{If the pursuit requires new technologies, the paper should identify and
-describe them, along with an outline of technology maturation plans and timescales.}
 
 We next describe some of the key challenges and risks which must be addressed to enable ExAO on the GMT.
 
 \textbf{The ELT ExAO-Scale DM Problem:} Achieving ~13.5 cm projected sampling of the primary mirror requires ~3000 actuators per 8.4 m segment, a total of 21,000 actuators on the GMT segments. \textbf{Risk:} Our 21,000 actuator parallel DM concept (see Fig. \ref{fig:pardm}) requires the optical disassembly/reassembly of the pupil resulting in a complicated opto-mechanical design that has not yet been demonstrated. \textbf{Mitigation Plan:} We will unambiguously prove that this parallel DM GMagAO-X design works optically and mechanically (closed-loop) with the GMT High-Contrast Phasing Testbed feeding MagAO-X in the lab as described in section \ref{subsection:testbed} below. 
 
-\textbf{Risk:} Primary mirror segment phasing will not achieve our ~30 nm rms requirement. \textbf{Mitigation plan:} We will demonstrate phasing control is possible with the Phasing testbed described in \ref{subsection:testbed}. 
+\textbf{Risk:} Primary mirror segment phasing will not be achieved our $\sim$30 nm rms requirement. \textbf{Mitigation plan:} We will demonstrate phasing control is possible with the Phasing testbed described in \ref{subsection:testbed}. 
 
 \textbf{Risk:} The pyramid wavefront sensor will require $>$ 21,000 pixels per quadrant ($>$ 288 pixels across the detector) on a Pyramid WFS with $>2kHz$ frame rates and very low readnoise.  Such cameras are not currently available, though development is underway. \textbf{Mitigation Plan:}  We are already studying reflective pyramids allowing the use of 4 smaller format cameras (one for each quadrant) which already exists. These will be demonstrated in the lab as a result of ongoing research.
 
@@ -334,19 +329,16 @@ We next describe some of the key challenges and risks which must be addressed to
 \label{subsection:testbed}
 For high contrast science cases, a pyramid wavefront sensor observing a bright on-axis guide star and controlling the ASM or a post-focal DM provides the final stage of wavefront control. While the natural guide star mode of the segmented GMT pupil has been extensively simulated, there are several areas of high risk remaining. One such area is the behavior of the pyramid wavefront sensor when atmospheric phase errors or piston vibrations across the GMT segment gaps approach half of the observing wavelength. In such conditions, the control system can occasionally “eject” segments by driving the DM in the wrong direction. Various mitigations are being considered, including more advanced control algorithms or a second focal plane sensor at a different wavelength. Another area of uncertainty is the performance of coronagraphs designed to suppress diffraction to achieve the contrast needed for exoplanet science cases. We can solve this in part by post coronagraphic focal plane wavefront sensing in combination with a classic pyramid sensor. The MagAO-X instrument follows such an architecture. 
 
-MagAO-X is funded by the NSF MRI program and is in the late stages of development at the University of Arizona. MagAO-X provides a cost-effective foundation for the GMT High-Contrast AO Testbed. This testbed will demonstrate fine phasing control of the GMT pupil using a pyramid wavefront sensor, testing of GMT coronagraph designs and focal plane wavefront sensing techniques, and provides a pathfinder for the GMagAO-X instrument. MagAO-X PI Dr. Jared Males will make MagAO-X available to the testbed at Steward Observatory for the periods when it is not in use at the 6.5m Magellan telescope. 
+MagAO-X is funded by the NSF MRI program and is in the late stages of development at the University of Arizona. MagAO-X provides a cost-effective foundation for the GMT High-Contrast AO Testbed. This testbed will demonstrate fine phasing control of the GMT pupil using a pyramid wavefront sensor, testing of GMT coronagraph designs and focal plane wavefront sensing techniques, and provides a pathfinder for the GMagAO-X instrument. MagAO-X will be available to the testbed at Steward Observatory for the periods when it is not in use at the 6.5m Magellan telescope. 
 
 The testbed is a narrow-field telescope simulator that feeds the GMT pupil, with simulated atmospheric turbulence and GMT M1 segment vibration PSDs, into the MagAO-X bench (see Fig. \ref{fig:testbed}). A GMT second-channel wavefront sensor and coronagraph will also be developed, to verify our expected control strategy and contrast predictions. University of Arizona undergraduate and graduate students, under the supervision of Prof. Laird Close, will provide the majority of the labor to assemble the testbed and perform the experiments.
  
  \begin{figure} [h!]
 \centering
-\includegraphics[width=6in]{figures/Testbed_figure.png}
+\includegraphics[width=5in]{figures/Testbed_figure.png}
 \caption{GMT High-Contrast Phasing Testbed. This testbed will allow rigorous closed loop solutions to having segment piston sensed and controlled from an initial 30 microns (not phased) down to 30 nm rms piston error while also simultaneously demonstrating closed loop AO with MagAO-X's 2040 actuator DM and Pyramid Wavefront sensor.  \label{fig:testbed}}
 \end{figure}
  
- 
-
-
 
 
 \section{Organization, Partnerships, and Current Status}  
@@ -354,39 +346,20 @@ The testbed is a narrow-field telescope simulator that feeds the GMT pupil, with
 organizations, any planned partnerships, and their current status.}
 
 \section{Schedule}
-\textit{The team should outline the development and operations schedule. The schedule
-should also indicate the operational lifetime of the pursuit.}
+The schedule for GMagAO-X is as follows:
+\vspace{-10pt}
+\begin{itemize} \itemsep 0pt
+\item A conceptual design study is scheduled to begin in the Fall of 2019, with Conceptual Design Review (CoDR) planned for summer 2021.  
+\item The detailed design will begin immediately after CoDR.
+\item Procurement of long lead-time items (e.g. DM segments) will begin in late 2021.  
+\item The Preliminary Design Review will be held in early 2022.
+\item A Final Deign Review will occur in late 2022.
+\item Construction will begin in early 2023.
+\item Shipment and deliver to the summit of Las Campanas will occur in 2025, with first-light in the 2025 to 2026 timeframe.
+\item The expected instrument lifetime is at least 10 years from first-light.  
+\end{itemize}
 
-A conceptual design study is scheduled to begin in the Fall of 2019, with Conceptual Design Review (CoDR) planned for summer 2021.  
-
-The detailed design will begin immediately after CoDR.
-
-Procurement of long lead-time items (namely, the DM segments) will begin in late 2021.  
-
-The Preliminary Design Review will be held in early 2022.
-
-A Final Deign Review will occur in late 2022.
-
-Construction will begin in early 2023.
-
-Shipment and deliver to the summit of Las Campanas will occur in 2025, with first-light in the 2025 to 2026 timeframe.
-
-The expected instrument lifetime is at least 10 years from first-light.  
-
-\section{Cost Estimates}
-\textit{The team should provide any cost estimates that have been developed for the
-current version of the pursuit. This should include the date the cost estimate was performed,
-should reference the base fiscal year, the organization that performed the estimate, and the top
-level results of the estimate, broken out by the major development and operational phases.
-Operating costs should be divided into direct funding to the science community (if planned) and
-costs required to keep facilities, missions, or other necessary infrastructure running. Any
-unusual end-of-life (e.g. decomissioning) costs should be noted. Also, if applicable, a
-breakdown of the assumed funding from federal, other public, international, or private sources
-should be provided. Specific sources of funding need not be identified.
-MODIFICATION: The team should provide completed cost estimates if available. If costs are
-still being developed and validated, or the breakdown of funding is yet to be determined, the
-project should provide the cost category for the overall project, including science and
-operations. The categories are:}
+\section{Cost Estimate}
 
 The GMagAO-X project is in the ``Medium'' ground-based instrument category (\$20M - \$70M).  An initial estimate, which includes the cost of major items such as the 7 MEMS deformable mirrors, indicates that design and construction of the ExAO system and coronagraph will be \$20M to \$30M.   
 

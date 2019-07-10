@@ -213,19 +213,12 @@ GJ 667C c        &  6.8   &  18.4   &  1.0  &  1.66  &  8.2$\times 10 ^{-8}$  & 
 \end{table}
 
 \subsection{ Acreting Protoplanets (H-alpha Planets)}
-One of the greatest challenges to astronomy today is understanding the details of planet formation. Planet formation can be best informed by creating a complete sample of directly imaged protoplanets (separations, masses, accretion rates, etc. \citep[Astro2020 science white papers:][]{2019BAAS...51c.527S,2019BAAS...51c.475A}. But discovery of such protoplanets requires “catching them in the act of growing”. That means making a very sharp image that allows us to see the characteristic hydrogen gas accretion lines (Hydrogen alpha = $H\alpha$ = 656 nm is one of the strongest such lines). A clever optical trick (SDI) enables very high-contrast $H\alpha$ imaging by simultaneously making a $H\alpha$ image and a Continuum image on the GMagAO-X focal plane. 
 
-Today our current SDI data reduction pipeline with MagAO's SDI camera produces very high-contrast images by first subtracting the scaled continuum image from the $H\alpha$ image to reveal $H\alpha$ protoplanets since with PCA, ADI and SDI reduction pipelines we remove most of the contaminating starlight starlight. In this manner, we have already made impressive detections of $H\alpha$ Jupiter mass protoplanets at 15-20AU with MagAO SDI (\citet[HD142527 B,][]{2014ApJ...781L..30C}; \citet[LkCa 15 b,][]{2015Natur.527..342S}; and \citet[PDS 70 b,][]{2018ApJ...863L...8W}). 
+One of the greatest challenges to astronomy today is understanding the details of planet formation. Planet formation can be best informed by creating a complete sample of directly imaged protoplanets (separations, masses, accretion rates, etc. \citep[Astro2020 science white papers:][]{2019BAAS...51c.527S,2019BAAS...51c.475A}. But discovery of such protoplanets requires “catching them in the act of growing”. That means making a very sharp image that allows us to see the characteristic hydrogen gas accretion lines (Hydrogen alpha = $H\alpha$ = 656 nm the strongest such line accessible to adaptive optics). 
+
+A clever optical trick (SDI) enables very high-contrast $H\alpha$ imaging by simultaneously making a $H\alpha$ image and a Continuum image on the science focal plane. Today our current SDI data reduction pipeline with MagAO's SDI camera produces very high-contrast images by first subtracting the scaled continuum image from the $H\alpha$ image to reveal $H\alpha$ protoplanets. With PCA, ADI and SDI data reduction pipelines we remove most of the contaminating starlight. In this manner, we have already made impressive detections of $H\alpha$ emitting protoplanets at 15-20AU with MagAO SDI  (\citet[HD142527 B,][]{2014ApJ...781L..30C}; \citet[LkCa 15 b,][]{2015Natur.527..342S}; and \citet[PDS 70 b,][]{2018ApJ...863L...8W}). 
 
 Projecting to  GMagAO-X's contrasts we will be able to extend our search down to relatively low-mass planets like accreting Neptunes at just $\sim1$ AU separations \citep{2019BAAS...51c.527S}. This will allow a complete sample of southern gas protoplanets formation within $\sim200$ pc. 
-
-% SCIENCE WHITE PAPERS
-% 
-% Sallum et al. 2019
-% Imaging Giant Protoplanets with the ELTs
-% \\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.527S/abstract\\
-% Apai et al. 2019  Planetary Habitability Informed by Planet Formation and Exoplanet Demographics
-% \\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.475A/abstract\\
 
 
 
@@ -268,28 +261,17 @@ a large wavelength grasp from visible through near-infrared since scattering
 depends on the ratio of the wavelength the grain size. This will harness GMagAO-X's ability to
 image down to $\sim$ 0.5 microns.
 
-%SCIENCE WHITE PAPERS
-
-%Jang-Condell et al. 2019 Protoplanetary Disk Science Enabled by Extremely Large Telescopes
-%\\https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.346J/abstract\\
-
-
 \section{Technical Overview}
-\textit{The team should provide a description of the technical aspects of the
-pursuit, including a description of the essential performance parameters for achieving the
-project's science goals.}
-\textit{For ground-based activities/projects, papers should describe the telescope or
-observatory architecture, key performance requirements, technical requirements,
-anticipated site and infrastructure requirements, as well as any public/private
-partnerships.}
 
-TECHNICAL DESCRIPTION OF GMT (including site, consortium, etc)
+The Giant Magellan Telescope will be a 25.4-meter visible and infrared (0.32 - 25 $\mu$m) telescope located at Las Campanas Observatory in the Chilean Andes and is designed to provide unprecedented clarity and sensitivity for the observation of astrophysical phenomena. The optical design of GMT consists of seven 8.4-meter borosilicate honeycomb mirror segments that reflect light to seven secondary mirror segments in a doubly-segmented Gregorian configuration. The compact design and small pixelscale at the direct Gregorian focal plane requires fairly small instruments to take necessary astronomical data. Commissioning will be performed using a fast-steering secondary mirror assembly which, during science operations, can be replaced with a state-of-the-art adaptive secondary assembly comprised of fully adaptive segments. The adaptive secondary mirror provides a general-purpose AO capability to all instruments on the telescope, including ground layer, natural guide star, and laser tomography adaptive optics modes. High contrast AO instruments must provide additional wavefront control elements to achieve their science objectives.
+
+GMT is currently being built by an international consortium of universities and research institutions with a deep history of pioneering telescope construction and design, quality instrumentation production, and revolutionary adaptive optics techniques and technology. The Founding Partners consist of Arizona State University (US), Astronomy Australia Limited (Australia), Australian National University (Australia), Carnegie Institution for Science (US), FAPESP-The S\~ao Paulo Research Foundation (Brazil), Harvard University (US), Korean Astronomy and Space Science Institute (South Korea), Smithsonian Institution (US), Texas A\&M University (US), University of Texas at Austin (US), University of Arizona (US), and the University of Chicago (US).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=6in]{figures/GMagAOX__fig4_no_labels_V2.png}
 \vspace{-0.2in}
-\caption{ GMagAO-X concept shown within the Auxiliary Port volume and mounted on the GMT elevation axis. The thick blue arrow shows the direction the light enters GMagAO-X after reflection off M3. This is a gravity invariant port which eliminates flexure and enables a vibration isolated (floating) optical bench. \label{fig:ap}}
+\caption{ GMagAO-X concept shown within the Auxiliary Port volume and mounted on the GMT elevation axis. The thick blue arrow shows the direction the light enters GMagAO-X after reflection off M3. This is a gravity invariant port which eliminates flexure and enables a vibration isolated (floating) optical 5x10' optical table. \label{fig:ap}}
 \vspace{-0.1in}
 \end{figure}
 
@@ -299,9 +281,8 @@ This notional concept has established the feasibility of mounting GMagAO-X on th
 
 \begin{figure} [h!]
 \centering
-\includegraphics[width=5in]{figures/pardm.png}
-\vspace{-0.1in}
-\caption{ Concept for a 7-segment 21,000 MEMS deformable mirror using a six-sided reflective prism.  In the cartoon at left all optical paths are the same length.  Pupils (conjugate to primary mirror segments) are the green planes. The center segment is passed through the central hole. Mechanical design renderings with different views show how such a "parallel DM" could be implemented.  \label{fig:pardm}}
+\includegraphics[width=5in]{figures/Possible_Optical_design_GMagAOX_V2.png}
+\caption{ Concept for an optical design of GMagAO-X. Both the woofer and tweeter DMs take advantage of the GMT pupil with new concept called a "Parallel DM". The tweeter is 7-segment 21,000 MEMS deformable mirror using a six-sided reflective prism.  In the cartoon at left all optical paths are the same length. The center segment is passed through a central hole in the pyramid. Mechanical design renderings with different views show how such a parallel DM could be implemented in GMagAO-X's optical design on a 5x10' optical table.  \label{fig:pardm}}
 \vspace{-0.1in}
 \end{figure}
 
@@ -317,11 +298,11 @@ We next describe some of the key challenges and risks which must be addressed to
 
 \textbf{Risk:} Primary mirror segment phasing will not be achieved our $\sim$30 nm rms requirement. \textbf{Mitigation plan:} We will demonstrate phasing control is possible with the Phasing testbed described in \ref{subsection:testbed}. 
 
-\textbf{Risk:} The pyramid wavefront sensor will require $>$ 21,000 pixels per quadrant ($>$ 288 pixels across the detector) on a Pyramid WFS with $>2kHz$ frame rates and very low readnoise.  Such cameras are not currently available, though development is underway. \textbf{Mitigation Plan:}  We are already studying reflective pyramids allowing the use of 4 smaller format cameras (one for each quadrant) which already exists. These will be demonstrated in the lab as a result of ongoing research.
+\textbf{Risk:} The pyramid wavefront sensor (PyWFS) in Fig. \ref{fig:pardm} will require $>$ 21,000 pixels per quadrant ($>$ 288 pixels across the detector) on a Pyramid WFS with $>2kHz$ frame rates and very low readnoise.  Such cameras are not currently available, though development is underway. \textbf{Mitigation Plan:}  We are already studying reflective pyramids allowing the use of 4 smaller format cameras (one for each quadrant) which already exists. These will be demonstrated in the lab as a result of ongoing research.
 
-\textbf{Risk}: Deviations of ~10 microradians due to thermal drifts or vibrations could lead to unstable wavefront/alignment errors. \textbf{Mitigation Plan:} Continue to test advanced locking kinematic optical mounts and floating optical tables as part of our phasing testbed efforts (see \ref{subsection:testbed}).
+\textbf{Risk}: Deviations of ~10 microradians due to thermal drifts or vibrations could lead to unstable wavefront/alignment errors of the OAP optics in Fig. \ref{fig:pardm}. \textbf{Mitigation Plan:} Continue to test advanced locking kinematic optical mounts and floating optical tables as part of our phasing testbed efforts (see \ref{subsection:testbed}).
 
-\textbf{Risk:} To eliminate high frequency non-common path vibrations we will use a floating optical table, yet this requires an advanced servo control of the gravity direction (to eliminate any tilts) when mounted at the GMT auxiliary port. \textbf{Mitigation Plan:} model the stability of the floating table to see if it will perform to specifications at the Aux. Port (see Fig. \ref{fig:ap}), and define the required servo system.
+\textbf{Risk:} To eliminate high frequency non-common path vibrations we will use a floating 5x10' optical table (shown in Figs \ref{fig:ap} and \ref{fig:pardm}), yet this requires an advanced servo control of the gravity direction (to eliminate any tilts) when mounted at the GMT auxiliary port. \textbf{Mitigation Plan:} model the stability of the floating table to see if it will perform to specifications at the Aux. Port (see Fig. \ref{fig:ap}), and define the required servo system.
 
 \textbf{Risk:} Difficult to detect biosignatures at $10^{-7}$ contrasts from the surface of the Earth (which is dominated by telluric biosignatures) \textbf{Mitigation Plan:} Use the power of High Resolution Spectroscopic Coronagraphy to exploit exoplanet Doppler shifts. Design a small ring-like "IFU" (placed at the previously determined RV angular separation of the rocky planet) with sixteen 50 micron core multi-mode fibers to feed the G-CLEF spectrograph (in a similar manner to that of G-CLEF’s Manifest feed). This should provide spectra at $R\sim218,000$ (lower resolutions possible with noiseless binning) from  $650-950$nm without crowding the sixteen traces. At such resolution the planet’s lines will shift between the fixed telluric lines and can be velocity stacked following the planet’s changing radial velocity from its orbit. In this manner biosignatures can be extracted from reflected light spectra from GMagAO-X and G-CLEF. To prove this is possible we will continue to work with the G-CLEF team to design an "exoplanet IFU". Conceptually this is planned as a sixteen sided reflective pyramid slicing the focal plane azimuthually and feeding 16 lenses bonded to $f/3$ fibers that in turn feed G-CLEF as an IFU. 
 
@@ -336,7 +317,7 @@ The testbed is a narrow-field telescope simulator that feeds the GMT pupil, with
  \begin{figure} [h!]
 \centering
 \includegraphics[width=5in]{figures/Testbed_figure.png}
-\caption{GMT High-Contrast Phasing Testbed. This testbed will allow rigorous closed loop solutions to having segment piston sensed and controlled from an initial 30 microns (not phased) down to 30 nm rms piston error while also simultaneously demonstrating closed loop AO with MagAO-X's 2040 actuator DM and Pyramid Wavefront sensor.  \label{fig:testbed}}
+\caption{GMT High-Contrast Phasing Testbed. This testbed will demonstrate rigorous closed-loop solutions to to having segment piston sensed and controlled from an initial 30 microns (not phased) down to 30 nm rms piston error while also simultaneously demonstrating closed loop AO with MagAO-X's 2040 actuator DM and Pyramid Wavefront sensor.  \label{fig:testbed}}
 \end{figure}
  
 

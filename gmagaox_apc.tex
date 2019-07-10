@@ -96,8 +96,7 @@
 %%
 %% If you wish, you may supply running head information, although
 %% this information may be modified by the editorial offices.
-\shorttitle{Sample article}
-\shortauthors{Schwarz et al.}
+\shorttitle{Astro2020: GMagAO-X}
 %%
 %% You can add a light gray and diagonal water-mark to the first page 
 %% with this command:
@@ -145,7 +144,7 @@ Antonin Bouchez (GMTO)\\
 Alycia Weinberger (Department of Terrestrial Magnetism, Carnegie Institution for Science)\\
 
 \vspace{.2in}
-\textbf{Abstract:} We describe plans for an ``extreme'' adaptive optics (ExAO) system for the Giant Magellan Telescope (GMT).  This instrument concept, currently called ``GMagAO-X'', is based on using existing deformable mirror (DM) and wavefront sensor (WFS) detector technology to implement a 21,000 actuator, 2000 Hz system.  Combined with state of the art coronagraphy, GMagAO-X will enable detection and characterization of exoplanets at extreme contrast ratios in groundbreaking variety.  This will include young giant planets (both from thermal emission and in the H-alpha acretion signature), older giant planets in reflected light, and temperate terrestrial planets orbiting nearby late-type stars also in reflected light.  GMagAO-X will also enable studies of circumstellar disks at unprecedented angular resolution in the visible and near-IR.  Since it is based on existing proven technology, GMagAO-X can be available at, or shortly-after, first light of the GMT, allowing the observatory to deliver groundbreaking exoplanet science almost immediately.  
+\textbf{Abstract:} We describe plans for an ``extreme'' adaptive optics (ExAO) system for the Giant Magellan Telescope (GMT).  This instrument concept, currently called ``GMagAO-X'', is based on using existing deformable mirror (DM) and wavefront sensor (WFS) detector technology to implement a 21,000 actuator, 2000 Hz system.  Combined with state of the art coronagraphy, GMagAO-X will enable detection and characterization of exoplanets at extreme contrast ratios in groundbreaking variety.  This will include young giant planets (both from thermal emission and in the H-alpha accretion signature), older giant planets in reflected light, and temperate terrestrial planets orbiting nearby late-type stars also in reflected light.  GMagAO-X will also enable studies of circumstellar disks at unprecedented angular resolution in the visible and near-IR.  Since it is based on existing proven technology, GMagAO-X can be available at, or shortly-after, first light of the GMT, allowing the observatory to deliver groundbreaking exoplanet science almost immediately.  
 \clearpage
 \setcounter{page}{1}
 
@@ -156,7 +155,7 @@ Alycia Weinberger (Department of Terrestrial Magnetism, Carnegie Institution for
 \vspace{-0.3in}
 \includegraphics[width=3.1in]{figures/fig1.png}
 \vspace{-0.1in}
-\caption{ Strehl Ratio vs. guidestar magnitude from MagAO-X simulations \citep{2018SPIE10703E..09M}.  By maintaining the same actuator pitch, these curves can be extrapolated to the 25.4 m GMT and GMagAO-X. \label{fig:strehl} }
+\caption{ Strehl Ratio vs. guide star magnitude from MagAO-X simulations \citep{2018SPIE10703E..09M}.  By maintaining the same actuator pitch, these curves can be extrapolated to the 25.4 m GMT and GMagAO-X. \label{fig:strehl} }
 \end{wrapfigure}
 
 The MagAO-X extreme adaptive optics (ExAO) system for the Magellan Clay telescope is currently under construction \citep{2018SPIE10703E..09M, 2018SPIE10703E..4YC}.  It consists of a 2040 actuator deformable mirror (DM), 3.6 kHz pyramid wavefront sensor (PyWFS), a suite of coronagraphs, and employs various post-coronagraph wavefront sensing and control (WFS\&C) techniques to optimize contrast.  MagAO-X is optimized for work in the visible, red-optical, and near-IR.  Destined for the same site as the GMT, it is an ideal testbed and demonstration system for a potential ExAO system for the GMT.
@@ -184,7 +183,7 @@ To demonstrate the enormous scientific potential of an ExAO+Coronagraph instrume
 
 Once radius is estimated, and its equilibrium temperature estimated from the host star parameters and its orbit, we estimate its albedo.  For planets $< 1.6 R_\Earth$ we use the Earthshine spectrum of \citet{2006ApJ...644..551T} normalized to EPOXI photometry \citep{2013ApJ...765L..17C}, assuming a Lambertian phase curve. For larger planets, we use the geometric albedo grid of \citet{2010ApJ...724..189C}, which includes phase.  With the radius and geometric albedo, we calculate the mean contrast in reflected light over a planet’s observable orbit.	
 
-Our baseline performance assumptions are that we reach a post-AO contrast of 10x worse than the frozen-flow predictive control predictions of \citet{2018JATIS...4a9001M}.  This is analyzed on a per-guidestar basis, taking into account AO performance as a function of brightness.  The factor of 10 is intended to account for boiling and other non-frozen-flow disturbances, as well as sub-optimal instrument performance.  We further assume that post-coronagraph and non-common-path WFS\&C is used to suppress quasi-static (long-lived) speckles to a level well below the residual atmospheric speckles.  The resulting residual noise sources are atmospheric speckles and photon noise.  We include a semi-analytic model of atmospheric speckle lifetimes, and calculate SNR vs time for an exoplanet of a given brightness with these noise sources.
+Our baseline performance assumptions are that we reach a post-AO contrast of 10x worse than the frozen-flow predictive control predictions of \citet{2018JATIS...4a9001M}.  This is analyzed on a per-guide star basis, taking into account AO performance as a function of brightness.  The factor of 10 is intended to account for boiling and other non-frozen-flow disturbances, as well as sub-optimal instrument performance.  We further assume that post-coronagraph and non-common-path WFS\&C is used to suppress quasi-static (long-lived) speckles to a level well below the residual atmospheric speckles.  The resulting residual noise sources are atmospheric speckles and photon noise.  We include a semi-analytic model of atmospheric speckle lifetimes, and calculate SNR vs time for an exoplanet of a given brightness with these noise sources.
 
 In Figure \ref{fig:planets} we show the 102 currently-known planets which could be detected in a single night (10 hrs) of telescope time each.  We estimate that a total of roughly 1 month of telescope nights will be needed for the entire survey.  This survey will sample a range of planet radii, including Earth-like and Neptune-like exoplanets.  It also spans a range of equilibrium temperatures corresponding to the inner Solar system.  Planets with these parameters have never been imaged or characterized in reflected light before.  See the Astro2020 science white paper by \citet{2019BAAS...51c.345M}.
 
@@ -195,7 +194,7 @@ In Figure \ref{fig:planets} we show the 102 currently-known planets which could 
 \vspace{-0.3in}
 \end{figure}
 
-In the right hand panel of Figure \ref{fig:planets} we highlight the small ($< R_{Nep}$) sample.  In particular, we note the 5 terrestrial and potentially habitable planets orbiting within the “habitable zone” of their host star.  Once detected in broad-band imaging, these planets will then be characterized in detail.  Characterizing these exoplanets with GMagAO-X in refected light shortly after first-light of the GMT will allow a search for biosignatures around the nearest known temperate terrestrial worlds.
+In the right hand panel of Figure \ref{fig:planets} we highlight the small ($< R_{Nep}$) sample.  In particular, we note the 5 terrestrial and potentially habitable planets orbiting within the “habitable zone” of their host star.  Once detected in broad-band imaging, these planets will then be characterized in detail.  Characterizing these exoplanets with GMagAO-X in reflected light shortly after first-light of the GMT will allow a search for biosignatures around the nearest known temperate terrestrial worlds.
    
 Next we assume that we achieve the same level of turbulence rejection, but are only able to suppress quasi-static speckles to a similar level and are hence dominated by long-lived correlated noise.  In this case, we would employ the high dispersion coronagraphy technique \citep[HDC,][]{2017ApJ...838...92M}, where template cross-correlation matching is used to detect the reflected stellar spectrum \citep{2017A&A...599A..16L}.  While less efficient than photometry for short-lived noise sources, HDC allows for root(t) improvement of SNR even in the presence of long-lived spatially correlated speckle noise.  To analyze this case, we use the BT-Settl \citep{2014IAUS..299..271A} to calculate the cross-correlation strength appropriate for a given spectral type, and then estimate the exposure time to detect each exoplanet in the NExScI database. Under this pessimistic performance case, the total number of detected planets (in 10 hrs or less each) is reduced to 63.
 In Table 1, we summarize the parameters of the temperate terrestrial (potentially habitable) planets.  Once the initial detection is performed (in the integration times shown), these planets will be extensively characterized to search for biosignatures.
@@ -219,7 +218,7 @@ GJ 667C c        &  6.8   &  18.4   &  1.0  &  1.66  &  8.2$\times 10 ^{-8}$  & 
 \end{tabu}
 \end{table}
 
-\subsection{ Acreting Protoplanets (H-alpha Planets)}
+\subsection{ Accreting Protoplanets (H-alpha Planets)}
 
 One of the greatest challenges to astronomy today is understanding the details of planet formation. Planet formation can be best informed by creating a complete sample of directly imaged protoplanets (separations, masses, accretion rates, etc. \citep[Astro2020 science white papers:][]{2019BAAS...51c.527S,2019BAAS...51c.475A}). But discovery of such protoplanets requires ``catching them in the act of growing''. That means making a very sharp image that allows us to see the characteristic hydrogen gas accretion lines (Hydrogen alpha = $H\alpha$ = 656 nm the strongest such line accessible to adaptive optics). 
 
@@ -234,7 +233,7 @@ Projecting to  GMagAO-X's contrasts we will extend our search down to low-mass p
 
 
 \subsection{ Disks }
-Disk science is critical to further our understanding of how planets and stars form \citep[see Astro2020 science whitepapers:][]{2019BAAS...51c.346J, 2019BAAS...51c.445W, 2019BAAS...51c.566D}.
+Disk science is critical to further our understanding of how planets and stars form \citep[see Astro2020 science white papers:][]{2019BAAS...51c.346J, 2019BAAS...51c.445W, 2019BAAS...51c.566D}.
 It is a very challenging application of adaptive optics because
 the disks are low surface brightness and extended objects exactly like the
 uncorrected seeing halo. The best way to reveal disks is to have a high Strehl
@@ -244,7 +243,7 @@ residual PSF from even face-on disks.
 
 There are two frontiers in circumstellar disk science, both of which will be
 pushed by GMagAO-X. The first is ever more detailed imaging of disk geometry,
-particularly in the 1-50 AU region analagous to the outer part of the Solar
+particularly in the 1-50 AU region analogous to the outer part of the Solar
 System. Most disks sit at 50-150 pc, so reaching separations comparable to the Earth, Mars, and the giant
 planet region requires imaging at 0.01-0.2". This is largely unexplored
 territory. Existing systems push in to at best 0.15" (for example, the GPI
@@ -252,7 +251,7 @@ coronagraph radius is 0.15", the newest coronagraphic mode on HST, the STIS
 BAR5, has an inner working angle of 0.15", and Subaru HiCIAO has reported disk
 detect ions in to 0.2").  
 
-The second frontier is the multiwavelength study of disks to derive the
+The second frontier is the multi-wavelength study of disks to derive the
 chemical make-up and dynamical state.  Scattering efficiency is a strong
 function of both size and composition, and measurements of disk brightness
 over a large wavelength range help break the degeneracy between the two
@@ -311,7 +310,7 @@ We next describe some of the key challenges and risks which must be addressed to
 
 \textbf{Risk:} To eliminate high frequency non-common path vibrations we will use a floating 5x10' optical table (shown in Figs \ref{fig:ap} and \ref{fig:pardm}), yet this requires an advanced servo control of the gravity direction (to eliminate any tilts) when mounted at the GMT auxiliary port. \textbf{Mitigation Plan:} model the stability of the floating table to see if it will perform to specifications at the Aux. Port (see Fig. \ref{fig:ap}), and define the required servo system.
 
-\textbf{Risk:} Difficult to detect biosignatures at $10^{-7}$ contrasts from the surface of the Earth (which is dominated by telluric biosignatures). \textbf{Mitigation Plan:} Use the power of High Resolution Spectroscopic Coronagraphy to exploit exoplanet Doppler shifts. Design a small ring-like "IFU" (placed at the previously determined RV angular separation of the rocky planet) with sixteen 50 micron core multi-mode fibers to feed the G-CLEF spectrograph (in a similar manner to that of G-CLEF’s Manifest feed). This should provide spectra at $R\sim218,000$ (lower resolutions possible with noiseless binning) from  $650-950$nm without crowding the sixteen traces. At such resolution the planet’s lines will shift between the fixed telluric lines and can be velocity stacked following the planet’s changing radial velocity from its orbit. In this manner biosignatures can be extracted from reflected light spectra from GMagAO-X and G-CLEF. To prove this is possible we will continue to work with the G-CLEF team to design an "exoplanet IFU". Conceptually this is planned as a sixteen sided reflective pyramid slicing the focal plane azimuthually and feeding 16 lenses bonded to $f/3$ fibers that in turn feed G-CLEF as an IFU. 
+\textbf{Risk:} Difficult to detect biosignatures at $10^{-7}$ contrasts from the surface of the Earth (which is dominated by telluric biosignatures). \textbf{Mitigation Plan:} Use the power of High Resolution Spectroscopic Coronagraphy to exploit exoplanet Doppler shifts. Design a small ring-like "IFU" (placed at the previously determined RV angular separation of the rocky planet) with sixteen 50 micron core multi-mode fibers to feed the G-CLEF spectrograph (in a similar manner to that of G-CLEF’s Manifest feed). This should provide spectra at $R\sim218,000$ (lower resolutions possible with noiseless binning) from  $650-950$nm without crowding the sixteen traces. At such resolution the planet’s lines will shift between the fixed telluric lines and can be velocity stacked following the planet’s changing radial velocity from its orbit. In this manner biosignatures can be extracted from reflected light spectra from GMagAO-X and G-CLEF. To prove this is possible we will continue to work with the G-CLEF team to design an "exoplanet IFU". Conceptually this is planned as a sixteen sided reflective pyramid slicing the focal plane azimuthally and feeding 16 lenses bonded to $f/3$ fibers that in turn feed G-CLEF as an IFU. 
 
 \subsection{The GMT High-Contrast Phasing Testbed}
 \label{subsection:testbed}
@@ -331,7 +330,7 @@ The testbed is a narrow-field telescope simulator that feeds the GMT pupil, with
 
 
 \section{Organization, Partnerships, and Current Status}  
-The GMagAO-X concept is being developed at the University of Arizona, in close coordination with the GMTO.  The core GMagAO-X team collobarates closely with the TMT-PSI team \citep[Astro 2020 APC white paper:][]{tmt-psi}, and the two instrument concepts share many common technologies.  A joint technological development roadmap is described in the APC white paper by \citet{roadmap}. 
+The GMagAO-X concept is being developed at the University of Arizona, in close coordination with the GMTO.  The core GMagAO-X team collaborates closely with the TMT-PSI team \citep[Astro 2020 APC white paper:][]{tmt-psi}, and the two instrument concepts share many common technologies.  A joint technological development roadmap is described in the APC white paper by \citet{roadmap}. 
 
 \section{Schedule}
 The schedule for GMagAO-X is as follows:
@@ -343,7 +342,7 @@ The schedule for GMagAO-X is as follows:
 \item The Preliminary Design Review will be held in early 2022.
 \item A Final Deign Review will occur in late 2022.
 \item Construction will begin in early 2023.
-\item Shipment and deliver to the summit of Las Campanas will occur in 2025, with first-light in the 2025 to 2026 timeframe.
+\item Shipment and deliver to the summit of Las Campanas will occur in 2025, with first-light in the 2025 to 2026 time frame.
 \item The expected instrument lifetime is at least 10 years from first-light.  
 \end{itemize}
 
